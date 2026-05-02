@@ -43,6 +43,6 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - B-Lamp: b-lamp/index.md
+  - B-Lamp: 
       - Bill of Materials: b-lamp/bom.md
       - Build Guide: b-lamp/build-guide.md
