@@ -1,9 +1,24 @@
 site_name: RelioDocs Example
 site_description: Build guides and documentation for maker projects
 site_author: t00dle
+site_url: https://t00dle.github.io/reliodocs-example/
+repo_url: https://github.com/t00dle/reliodocs-example
+repo_name: reliodocs-example
 
 theme:
   name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - toc.follow
+    - content.code.copy
+
+plugins:
+  - search
 
 nav:
   - Home: index.md
