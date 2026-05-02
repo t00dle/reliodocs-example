@@ -1,0 +1,12 @@
+site_name: RelioDocs Example
+site_description: Build guides and documentation for maker projects
+site_author: t00dle
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - B-Lamp:
+      - Bill of Materials: b-lamp/bom.md
+      - Build Guide: b-lamp/build-guide.md
