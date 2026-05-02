@@ -1,0 +1,838 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build guides and documentation for maker projects">
+      
+      
+        <meta name="author" content="t00dle">
+      
+      
+        <link rel="canonical" href="https://t00dle.github.io/reliodocs-example/b-lamp/build-guide/">
+      
+      
+        <link rel="prev" href="../bom/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>Build Guide - RelioDocs Example</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#b-lamp-build-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RelioDocs Example" class="md-header__button md-logo" aria-label="RelioDocs Example" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RelioDocs Example
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Build Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/t00dle/reliodocs-example" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    reliodocs-example
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../bom/" class="md-tabs__link">
+          
+  
+  B-Lamp
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RelioDocs Example" class="md-nav__button md-logo" aria-label="RelioDocs Example" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RelioDocs Example
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/t00dle/reliodocs-example" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    reliodocs-example
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    B-Lamp
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            B-Lamp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bom/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bill of Materials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Build Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Build Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-print-the-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1 — Print the Parts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-prepare-the-led-strip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2 — Prepare the LED Strip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-wire-the-electronics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 — Wire the Electronics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-flash-the-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 — Flash the Firmware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-mount-the-electronics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5 — Mount the Electronics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-attach-the-led-strip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6 — Attach the LED Strip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-final-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7 — Final Assembly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-print-the-parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1 — Print the Parts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-prepare-the-led-strip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2 — Prepare the LED Strip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-wire-the-electronics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 — Wire the Electronics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-flash-the-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 — Flash the Firmware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-mount-the-electronics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5 — Mount the Electronics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-attach-the-led-strip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6 — Attach the LED Strip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-final-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7 — Final Assembly
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="b-lamp-build-guide">B-Lamp — Build Guide<a class="headerlink" href="#b-lamp-build-guide" title="Permanent link">&para;</a></h1>
+<p>The B-Lamp is a compact 3D printed LED lamp powered by a WS2812B LED strip and a small microcontroller. This guide walks through printing the parts, wiring the electronics, and assembling the final lamp.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All parts from the <a href="../bom/">Bill of Materials</a> on hand</li>
+<li>Slicer software (e.g. PrusaSlicer, Cura, or Bambu Studio)</li>
+<li>Basic soldering experience</li>
+<li>Estimated build time: <strong>2–3 hours</strong></li>
+</ul>
+<hr />
+<h2 id="step-1-print-the-parts">Step 1 — Print the Parts<a class="headerlink" href="#step-1-print-the-parts" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Download the STL files from the <code>/stl</code> folder in the project repository.</li>
+<li>Slice each part with the settings listed in the BOM print notes.</li>
+<li>Recommended settings for structural parts:</li>
+<li>Layer height: 0.2 mm</li>
+<li>Perimeters: 3</li>
+<li>Supports: none required (all parts designed to print support-free)</li>
+<li>Recommended settings for the shade and diffuser ring:</li>
+<li>Layer height: 0.15 mm for smoother surface</li>
+<li>Infill: 10% gyroid</li>
+<li>Material: <strong>translucent PLA</strong> for best light diffusion</li>
+<li>Allow parts to cool fully before removing from the build plate.</li>
+</ol>
+<hr />
+<h2 id="step-2-prepare-the-led-strip">Step 2 — Prepare the LED Strip<a class="headerlink" href="#step-2-prepare-the-led-strip" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Cut the WS2812B strip to <strong>30 LEDs</strong> (0.5 m at 60 LED/m density). Always cut on the designated cut lines between pads.</li>
+<li>Tin the three solder pads at the input end of the strip: <strong>5V</strong>, <strong>GND</strong>, and <strong>DIN</strong>.</li>
+<li>Solder the 330 Ω resistor in series on the <strong>DIN</strong> wire before connecting to the microcontroller data pin. This protects the first LED from signal reflections.</li>
+<li>Solder the 1000 µF capacitor across the <strong>5V</strong> and <strong>GND</strong> pads at the power-input end of the strip. Observe correct polarity (positive leg to 5V).</li>
+</ol>
+<hr />
+<h2 id="step-3-wire-the-electronics">Step 3 — Wire the Electronics<a class="headerlink" href="#step-3-wire-the-electronics" title="Permanent link">&para;</a></h2>
+<pre><code>USB-C breakout ──5V──┬──────────────────── LED strip 5V
+                     │
+                    [1000 µF cap]
+                     │
+USB-C breakout ──GND─┴──────────────────── LED strip GND
+                     │
+              XIAO RP2040 GND ─────────── (shared ground)
+
+XIAO RP2040 D0 ──[330 Ω]──────────────── LED strip DIN
+
+XIAO RP2040 D1 ─────────────────────────── button pin 1
+GND ─────────────────────────────────────── button pin 2
+</code></pre>
+<ol>
+<li>Connect the USB-C breakout board <strong>VBUS</strong> pin to the LED strip <strong>5V</strong> pad and also to the <strong>VIN</strong> or <strong>5V</strong> pin on the XIAO RP2040.</li>
+<li>Join all <strong>GND</strong> connections: breakout board, LED strip, and XIAO RP2040.</li>
+<li>Run the data wire from XIAO pin <strong>D0</strong> through the 330 Ω resistor to the LED strip <strong>DIN</strong> pad.</li>
+<li>Connect the tactile push button between XIAO pin <strong>D1</strong> and <strong>GND</strong>.</li>
+<li>Double-check polarity on the capacitor before powering on.</li>
+</ol>
+<hr />
+<h2 id="step-4-flash-the-firmware">Step 4 — Flash the Firmware<a class="headerlink" href="#step-4-flash-the-firmware" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Plug the XIAO RP2040 into your computer while holding the <strong>BOOT</strong> button to enter UF2 bootloader mode. A USB drive named <code>RPI-RP2</code> should appear.</li>
+<li>Copy the provided <code>.uf2</code> firmware file from the <code>/firmware</code> folder onto the drive. The board will reboot automatically.</li>
+<li>Once flashed, the LED strip should illuminate with the default warm-white scene.</li>
+<li>Short-press the button to cycle through preset scenes; long-press (&gt; 1 s) to toggle the lamp on/off.</li>
+</ol>
+<hr />
+<h2 id="step-5-mount-the-electronics">Step 5 — Mount the Electronics<a class="headerlink" href="#step-5-mount-the-electronics" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Place the <strong>PCB mount bracket</strong> flat inside the lamp base, aligning the four M2 screw holes.</li>
+<li>Secure the XIAO RP2040 and USB-C breakout board to the bracket using <strong>M2 × 6 mm self-tapping screws</strong>.</li>
+<li>Coil the excess wire neatly and use the <strong>cable clips</strong> to secure them to the interior walls of the base.</li>
+<li>Feed the USB-C cable through the opening in the base.</li>
+</ol>
+<hr />
+<h2 id="step-6-attach-the-led-strip">Step 6 — Attach the LED Strip<a class="headerlink" href="#step-6-attach-the-led-strip" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Peel the backing from the LED strip's adhesive side.</li>
+<li>Route the strip along the inside rim of the <strong>lamp shade</strong>, pressing firmly so the adhesive seats fully.</li>
+<li>Ensure the strip's <strong>DIN</strong> end aligns with where the wire exits toward the base.</li>
+<li>Gently flex the shade into its final curve — the strip should follow without kinking.</li>
+</ol>
+<hr />
+<h2 id="step-7-final-assembly">Step 7 — Final Assembly<a class="headerlink" href="#step-7-final-assembly" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Place the <strong>diffuser ring</strong> into the top opening of the shade. It should press-fit snugly.</li>
+<li>Align the shade with the base so the four M3 screw bosses line up with the holes in the base top plate.</li>
+<li>Insert <strong>M3 hex nuts</strong> into the captured pockets on the underside of the base.</li>
+<li>Thread <strong>M3 × 8 mm screws</strong> through the shade into the nuts and tighten until snug — do not overtighten.</li>
+<li>Plug in the USB-C cable and verify the lamp powers on.</li>
+</ol>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No LEDs light up</td>
+<td>Power not reaching strip</td>
+<td>Check 5V and GND connections at strip input</td>
+</tr>
+<tr>
+<td>First LED wrong colour / flickering</td>
+<td>Missing or incorrect resistor</td>
+<td>Verify 330 Ω on DIN line</td>
+</tr>
+<tr>
+<td>LEDs flash then go dark</td>
+<td>Power supply under-rated</td>
+<td>Use a supply rated ≥ 2 A at 5 V</td>
+</tr>
+<tr>
+<td>Lamp won't respond to button</td>
+<td>Button wiring or firmware issue</td>
+<td>Check D1 connection; reflash firmware</td>
+</tr>
+<tr>
+<td>Shade does not seat flat</td>
+<td>Warp in 3D print</td>
+<td>Lightly sand the mating surface</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Happy building! If you run into issues, open an issue in the project repository.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
